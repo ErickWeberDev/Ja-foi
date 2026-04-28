@@ -1,4 +1,5 @@
 import { useState } from "react";
+import listIcon from "../assets/list.svg";
 
 export const Header = () => {
   const [menu, setMenu] = useState<boolean>(false);
@@ -6,16 +7,19 @@ export const Header = () => {
   return (
     <>
       <header className="w-full flex items-center justify-between px-6 py-4 bg-white border-b border-gray-200">
-        <h1 className="text-3xl font-semibold text-gray-900 tracking-tight">
+        <a
+          href="/"
+          className="text-3xl font-semibold cursor-pointer text-gray-900 tracking-tight"
+        >
           Ja <strong className="text-blue-400">Foi</strong>
-        </h1>
+        </a>
 
         <nav className=" hidden md:flex items-center gap-6">
           <a href="/" className="text-gray-700 hover:text-blue-600 transition">
             Início
           </a>
           <a
-            href="caderno"
+            href="journal"
             className="text-gray-700 h-full hover:text-blue-600 transition"
           >
             Caderno
@@ -27,7 +31,7 @@ export const Header = () => {
             Afazeres
           </a>
           <a
-            href="stopwatch"
+            href="/stopwatch"
             className="text-gray-700 hover:text-blue-600 transition"
           >
             Cronômetro
@@ -42,7 +46,7 @@ export const Header = () => {
             <div className="w-6 h-6 font-bold opacity-70">X</div>
           ) : (
             <img
-              src="src/assets/list.svg"
+              src={listIcon}
               alt="Abrir menu"
               className="w-6 h-6 opacity-70"
             />
@@ -60,7 +64,7 @@ export const Header = () => {
               Início
             </a>
             <a
-              href="caderno"
+              href="journal"
               className="text-gray-700 hover:text-blue-600 hover:bg-blue-50 px-3 py-2 rounded-lg transition"
             >
               Caderno
@@ -72,13 +76,13 @@ export const Header = () => {
               Afazeres
             </a>
             <a
-              href="stopwatch"
+              href="/stopwatch"
               className="text-gray-700 hover:text-blue-600 hover:bg-blue-50 px-3 py-2 rounded-lg transition"
             >
               Cronômetro
             </a>
             <a
-              href="ciclo-de-estudo"
+              href="/study-cycle"
               className="text-gray-700 hover:text-blue-600 hover:bg-blue-50 px-3 py-2 rounded-lg transition"
             >
               Ciclo de estudo

@@ -1,6 +1,6 @@
 export const Home = () => {
   return (
-    <main className="mt-20 md:mt-24 px-4 md:px-6 max-w-4xl mx-auto space-y-6">
+    <main  className=" mb-20 mt-20 md:mt-24 px-4 md:px-6 max-w-4xl mx-auto space-y-6">
       <section className="bg-blue-50 border border-blue-100 p-5 rounded-xl">
         <p className="text-sm text-blue-700">Continue de onde parou</p>
         <h2 className="text-lg font-semibold text-gray-900 mt-1">
