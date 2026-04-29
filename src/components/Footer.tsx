@@ -2,7 +2,7 @@ export const Footer = () => {
   return (
     <footer className=" fixed mt-3 bottom-0 w-full bg-white border-t border-gray-200">
       <div className="max-w-4xl mx-auto px-4 md:px-6 py-2 flex items-center justify-between text-xs text-gray-500">
-        <p className="whitespace-nowrap">Feito por Erick Weber ©</p>
+        <a className="whitespace-nowrap">Feito por Erick Weber ©</a>
 
         <div className="flex items-center gap-3">
           <a

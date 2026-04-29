@@ -6,6 +6,8 @@ import { Footer } from "./components/Footer";
 import { Stopwatch } from "./page/Stopwatch";
 import { StudyCycle } from "./page/StudyCycle";
 import { Journal } from "./page/Journal";
+import { Chores } from "./page/Chores";
+import { FlashCards } from "./page/FlashCards";
 
 function App() {
   return (
@@ -16,6 +18,8 @@ function App() {
         <Route path="/stopwatch" element={<Stopwatch />} />
         <Route path="/study-cycle" element={<StudyCycle />} />
         <Route path="/journal" element={<Journal />} />
+        <Route path="/chores" element={<Chores />} />
+        <Route path="/flash-cards" element={<FlashCards />} />
       </Routes>
       <Footer />
     </BrowserRouter>

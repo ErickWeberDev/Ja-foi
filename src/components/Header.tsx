@@ -25,7 +25,7 @@ export const Header = () => {
             Caderno
           </a>
           <a
-            href="afazeres"
+            href="chores"
             className="text-gray-700 hover:text-blue-600 transition"
           >
             Afazeres
@@ -70,7 +70,7 @@ export const Header = () => {
               Caderno
             </a>
             <a
-              href="afazeres"
+              href="chores"
               className="text-gray-700 hover:text-blue-600 hover:bg-blue-50 px-3 py-2 rounded-lg transition"
             >
               Afazeres
