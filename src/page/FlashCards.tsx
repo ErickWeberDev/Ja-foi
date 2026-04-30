@@ -106,7 +106,6 @@ export const FlashCards = () => {
     setIsModal(true);
   };
 
-  // Abre o CardModal já preenchido — volta para DeckModal ao cancelar
   const handleOpenEditCard = (card: CardsType) => {
     setCardFront(card.front);
     setCardVerse(card.verse);
@@ -131,7 +130,7 @@ export const FlashCards = () => {
             : c,
         ),
       );
-      // volta para o DeckModal após salvar edição
+
       setCardFront("");
       setCardVerse("");
       setEditingCardId(null);
@@ -143,7 +142,7 @@ export const FlashCards = () => {
         title: cardFront.trim(),
         front: cardFront.trim(),
         verse: cardVerse.trim(),
-        difficulty: 5,
+        difficulty: 1,
       };
       setCards((prev) => [...prev, newCard]);
       closeModal();
@@ -158,7 +157,7 @@ export const FlashCards = () => {
     setCardFront("");
     setCardVerse("");
     setEditingCardId(null);
-    // se estava editando um card, volta para o DeckModal
+
     if (editingCardId !== null) {
       setDeckCard("deck");
     } else {

@@ -10,7 +10,7 @@ type Props = {
   onSelectDifficulty: (n: number) => void;
   onNext: () => void;
   onRestart: () => void;
-  onCancel: () => void; // <- adicionado
+  onCancel: () => void; 
 };
 
 export const StudyModal = ({
@@ -120,7 +120,7 @@ export const StudyModal = ({
         </>
       )}
 
-      {/* Cancelar sempre visível no rodapé */}
+      
       <button
         onClick={onCancel}
         className="w-full py-2 text-sm bg-gray-100 text-gray-700 rounded-lg hover:bg-gray-200 transition"
