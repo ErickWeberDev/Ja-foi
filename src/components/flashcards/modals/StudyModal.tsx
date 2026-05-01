@@ -1,4 +1,4 @@
-import type { CardsType, DeckType } from "../../../types/CardsType";
+import type { CardsType, DeckType } from "../src/types/CardsType";
 
 type Props = {
   selectedDeck: DeckType | undefined;
@@ -10,7 +10,7 @@ type Props = {
   onSelectDifficulty: (n: number) => void;
   onNext: () => void;
   onRestart: () => void;
-  onCancel: () => void; 
+  onCancel: () => void;
 };
 
 export const StudyModal = ({
@@ -120,7 +120,6 @@ export const StudyModal = ({
         </>
       )}
 
-      
       <button
         onClick={onCancel}
         className="w-full py-2 text-sm bg-gray-100 text-gray-700 rounded-lg hover:bg-gray-200 transition"

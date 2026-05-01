@@ -64,7 +64,6 @@ export const FlashCards = () => {
     resetForm();
   };
 
-  // ── DECK ──────────────────────────────────────────
   const handleOpenCreateDeck = () => {
     resetForm();
     setDeckCard("deck");
@@ -98,7 +97,6 @@ export const FlashCards = () => {
     setCards((prev) => prev.filter((c) => c.deckId !== id));
   };
 
-  // ── CARD ──────────────────────────────────────────
   const handleOpenCreateCard = (deckId: number) => {
     resetForm();
     setSelectedDeckId(deckId);
@@ -165,7 +163,6 @@ export const FlashCards = () => {
     }
   };
 
-  // ── ESTUDO ──────────────────────────────────────────
   const handleOpenStudy = (deckId: number) => {
     setSelectedDeckId(deckId);
     setStudyIndex(0);
