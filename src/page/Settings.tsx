@@ -1,5 +1,3 @@
-import { useState } from "react";
-
 export const Settings = () => {
   const handleExport = () => {
     const data: Record<string, unknown> = {};
