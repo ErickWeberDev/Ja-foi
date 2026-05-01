@@ -1,4 +1,4 @@
-# 📘 Study Hub — React + TypeScript + Vite + tailwind
+# Ja-foi — React + TypeScript + Vite + tailwind
 
 Uma aplicação focada em estudos, construída com **React**, **TypeScript**, **tailwind** e **Vite**, oferecendo ferramentas essenciais para organização, memorização e produtividade acadêmica.
 
