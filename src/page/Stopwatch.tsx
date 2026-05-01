@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import type { materialsType } from "../types/materialsTypes";
 import bepeSound from "../sounds/bepe.mp3";
 
-type Mode = "pomodoro" | "ciclo" | null;
+type Mode = "ciclo" | null;
 
 const STORAGE = {
   time: "time",
@@ -11,7 +11,6 @@ const STORAGE = {
 
 const getSavedMaterials = (): materialsType[] => {
   if (typeof window === "undefined") return [];
-
   try {
     const raw = localStorage.getItem(STORAGE.materials);
     return raw ? (JSON.parse(raw) as materialsType[]) : [];
@@ -22,7 +21,6 @@ const getSavedMaterials = (): materialsType[] => {
 
 const getSavedTime = (): number => {
   if (typeof window === "undefined") return 0;
-
   const parsed = Number(localStorage.getItem(STORAGE.time));
   if (!Number.isFinite(parsed) || parsed < 0) return 0;
   return parsed;
@@ -39,7 +37,6 @@ export const Stopwatch = () => {
   const [value, setValue] = useState("");
 
   const [materials] = useState<materialsType[]>(getSavedMaterials);
-
   const [time, setTime] = useState<number>(getSavedTime);
 
   useEffect(() => {
@@ -54,31 +51,12 @@ export const Stopwatch = () => {
 
   useEffect(() => {
     if (!play) return;
-
     startRef.current = Date.now() - timeRef.current;
-
     const id = setInterval(() => {
       setTime(Date.now() - startRef.current);
     }, 10);
-
     return () => clearInterval(id);
   }, [play]);
-
-  useEffect(() => {
-    if (mode !== "pomodoro") return;
-
-    const min = Math.floor(time / 60000);
-    const cycle = min % 30;
-
-    if (cycle === 25 && !hasPlayed.current) {
-      audioRef.current?.play().catch(() => undefined);
-      hasPlayed.current = true;
-    }
-
-    if (cycle === 0 && min !== 0) {
-      hasPlayed.current = false;
-    }
-  }, [time, mode]);
 
   const format = (ms: number) => {
     const s = Math.floor(ms / 1000);
@@ -105,18 +83,7 @@ export const Stopwatch = () => {
       <section className="bg-gray-50 p-5 rounded-xl space-y-4">
         <div className="flex gap-1 bg-gray-100 p-1 rounded-lg">
           <button
-            onClick={() => setMode(mode === "pomodoro" ? null : "pomodoro")}
-            className={`flex-1 py-2 text-sm rounded-md ${
-              mode === "pomodoro" ? "bg-white shadow-sm" : "bg-gray-200"
-            }`}
-          >
-            Pomodoro
-          </button>
-
-          <button
-            onClick={() => {
-              setMode(mode === "ciclo" ? null : "ciclo");
-            }}
+            onClick={() => setMode(mode === "ciclo" ? null : "ciclo")}
             className={`flex-1 py-2 text-sm rounded-md ${
               mode === "ciclo" ? "bg-white shadow-sm" : "bg-gray-200"
             }`}
@@ -141,7 +108,6 @@ export const Stopwatch = () => {
                     </option>
                   ))}
                 </select>
-
                 <div className="mt-1 px-3 py-2">{cycleProgress}</div>
               </>
             ) : (

@@ -8,6 +8,7 @@ import { StudyCycle } from "./page/StudyCycle";
 import { Journal } from "./page/Journal";
 import { Chores } from "./page/Chores";
 import { FlashCards } from "./page/FlashCards";
+import { Settings } from "./page/Settings";
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
         <Route path="/journal" element={<Journal />} />
         <Route path="/chores" element={<Chores />} />
         <Route path="/flash-cards" element={<FlashCards />} />
+        <Route path="/configuracao" element={<Settings />} />
       </Routes>
       <Footer />
     </BrowserRouter>
